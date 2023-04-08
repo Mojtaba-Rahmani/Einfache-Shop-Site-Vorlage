@@ -1,0 +1,119 @@
+﻿@page
+@model TopLearn.Web.Pages.Admin.Users.CreateUserModel
+@{
+    ViewData["Title"] = "افزودن کاربر جدید";
+    List<TopLearn.DataLayer.Entities.User.Roles> roles = ViewData["Roles"] as List<TopLearn.DataLayer.Entities.User.Roles>;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                افزودن کاربر جدید
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <form method="post" enctype="multipart/form-data">
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    @* <i class="fa fa-bar-chart-o fa-fw"></i>*@ اطلاعات کاربر
+
+
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>نام کاربری</label>
+                        <input type="text" asp-for="CreateUserViewModel.UserName" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>ایمیل</label>
+                        <input type="email" asp-for="CreateUserViewModel.Email" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>کلمه عبور</label>
+                        <input type="text" asp-for="CreateUserViewModel.Password" class="form-control">
+                    </div>
+                </div>
+           <div class="panel ">
+                <div class="panel-heading">
+                  <div class="form-group">
+                         <label>انتخاب نقش کاربر</label>
+                    @foreach (var Item in roles)
+                    {
+                        <div class="checkbox">
+                            <label>
+                                <input name="SeletRolls" type="checkbox" value=@Item.RoleId >@Item.RoleTitle
+                            </label>
+                        </div>
+                    }
+                         <input type="submit" value="ذخیره اطلاعات" class="btn btn-success"/>
+                </div>
+                <!-- /.panel-body -->
+            
+            </div>
+
+                   
+                </div>
+            </div>
+  
+                    </div>
+
+
+        <div class="col-md-4">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    تصویر پروفایل
+
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <img id="imgAvatar" class="thumbnail" src="~/UserAvatar/Par.jpeg" />
+                    <div class="form-group">
+                        <label>انتخاب تصویر</label>
+                        <input type="file" asp-for="CreateUserViewModel.UserAvatar" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+           
+
+        </div>
+
+
+        
+
+    </form>
+</div>
+
+@section Scripts
+ {
+<script>
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#imgAvatar').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#CreateUserViewModel_UserAvatar").change(function() {
+        readURL(this);
+    });
+</script>
+ }
+
+
+
+
