@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "کیف پول شما";
+}
+
+<nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">تاپ لرن</a></li>
+        <li class="breadcrumb-item active" aria-current="page">کیف پول شما</li>
+    </ul>
+</nav>
+
+<div class=container>
+
+    @if (ViewBag.IsSuccess == true)
+    {
+        <div class="alert alert-success">
+            <h2>
+                پرداخت با ووفقیت انجام شد
+            </h2>
+            <p>   @ViewBag.code : کد پیگیری</p>
+        </div>
+    }
+    else
+    {
+         <div class="alert alert-danger">
+            <h2>
+                متاسفانه پرداخت با ووفقیت انجام نشد
+            </h2>
+            <p>   @ViewBag.code : کد پیگیری</p>
+        </div>
+    }
+</div>
