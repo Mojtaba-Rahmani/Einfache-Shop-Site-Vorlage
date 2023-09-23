@@ -1,18 +1,18 @@
-<h1> Einfache-Shop-Site-Vorlage </h1>
+<h1> Shop Site Template </h1>
 
-<h2> Dies ist eine Shop-Site mit einem Verwaltungspanel und einem Benutzerpanel. </h2>
+<h2> This is a shop site with an administration panel and a user panel. </h2>
 
 
-<p dir="auto"> Benutzeranmeldung und Registrierung
-Benutzerauthentifizierung
-Aktivierungs-E-Mail und Passwortwiederherstellung
-Benutzerbereich
-Benutzerkonto bearbeiten
-Die Brieftasche des Benutzers
-Zahlungs-Gateways
-Site-Management-Panel
-Benutzerverwaltung
-Rollen verwalten
+<p dir="auto"> User login and registration
+User authentication
+Activation email and password recovery
+User area
+Edit user account
+The user's wallet
+Payment gateways
+Site management panel
+User management
+Manage roles
 </p>
 
-<h2> und Seine Entwicklung geht weiter </h2>
+<h2> and His development continues </h2>
